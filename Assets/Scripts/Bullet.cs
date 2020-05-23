@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision) {
+    CollisionEvent collisionEvent;
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
         Destroy(gameObject);
-        collision.collider.GetComponent<ObjectWithHealth>()?.TakeDamage(5);
+        collisionEvent.Invoke(collision);
+    }
+
+    public void Fire()
+    {
+
+    }
+
+    public void RegisterCollisionEvent(CollisionEvent collisionEvent) {
+        this.collisionEvent = collisionEvent;
     }
 }

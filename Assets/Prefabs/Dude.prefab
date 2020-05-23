@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7313010305051893209}
   - component: {fileID: 881988922}
   - component: {fileID: 881988923}
-  - component: {fileID: 5822316588528907894}
+  - component: {fileID: 5092770420168251343}
   m_Layer: 8
   m_Name: Dude
   m_TagString: Untagged
@@ -131,7 +131,6 @@ MonoBehaviour:
   moveForce: 5000
   maxVelocity: 5
   slowDown: 0.9
-  applySlowdown: 1
 --- !u!50 &881988922
 Rigidbody2D:
   serializedVersion: 4
@@ -179,7 +178,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27851963, y: 0.41815972}
   m_EdgeRadius: 0
---- !u!114 &5822316588528907894
+--- !u!114 &5092770420168251343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,11 +187,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7565470425320198135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b06e240275c61d4d862b2a482095199, type: 3}
+  m_Script: {fileID: 11500000, guid: 40973383622f9174999fc9df06097401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canShoot: 1
   firePoint: {fileID: 1505991135658386387}
-  bulletPrefab: {fileID: 2871514269341823914, guid: 37cf1acbfa22a5143bfd34601ee55e3b,
-    type: 3}
-  bulletForce: 20
-  fireRate: 10

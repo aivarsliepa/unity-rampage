@@ -11,25 +11,26 @@ public class PlayerController : MonoBehaviour
     public float maxVelocity = 5f;
     public float slowDown = 0.9f;
 
-    public bool applySlowdown = true;
-
     Crosshair crosshair;
+    Shooter shooter;
 
-    // Start is called before the first frame update
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        // crosshair = GetComponent<Crosshair>();
-        // crosshair = GetComponentInChildren<Crosshair>();
         crosshair = FindObjectOfType<Crosshair>();
+        shooter = GetComponent<Shooter>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         movement = new Vector2(horizontal, vertical);
+
+        if (Input.GetButton("Fire1"))
+        {
+            shooter.Shoot();
+        }
     }
 
     void FixedUpdate()
@@ -48,7 +49,12 @@ public class PlayerController : MonoBehaviour
             rigidbody2d.velocity = rigidbody2d.velocity * slowDown;
         }
 
-        // transform.rotation = Utils.GetRotationAngle(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
         transform.rotation = Utils.GetRotationAngle(transform.position, crosshair.transform.position);
+    }
+
+    public bool PickWeapon(Weapon weapon)
+    {
+        shooter.weapon = weapon;
+        return true;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     PlayerController player;
-    float maxSpeed = 1f;
+    public float maxSpeed = 1f;
 
     void Start()
     {

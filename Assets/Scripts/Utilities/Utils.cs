@@ -15,13 +15,13 @@ public static class Utils
         return Quaternion.Euler(0f, 0f, angle - 90);
     }
 
+    //
+    // Summary:
+    //     Returns angle between two vectors
+    //
     public static float GetAngleFromVectors(Vector2 vectorA, Vector2 vectorB)
     {
         Vector2 difference = vectorA.GetDirectionTo(vectorB);
-        // Vector2 difference = vectorB - vectorA;
-        // difference.Normalize();
-
-
         return Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
     }
 }

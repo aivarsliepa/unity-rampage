@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5605849857251035168}
   - component: {fileID: 2851323660780365229}
   - component: {fileID: -8172689484797254176}
-  - component: {fileID: 4221728993738129503}
+  - component: {fileID: 3226647904479616824}
   m_Layer: 0
   m_Name: RedBarrel
   m_TagString: Untagged
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_Offset: {x: 0.03403589, y: 0.099999994}
   serializedVersion: 2
   m_Radius: 0.18989542
---- !u!114 &4221728993738129503
+--- !u!114 &3226647904479616824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,10 +108,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6246946422009865834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 203a4c5ea7a9b7c4a8820dc23b702a1b, type: 3}
+  m_Script: {fileID: 11500000, guid: d1b6f0e4e95412a4caffef18f46ff2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastRadius: 2
-  blastPower: 800
-  explosionPrefab: {fileID: 5277483047579595663, guid: a56cdef20677183449f4f69181c86741,
+  deathObject: {fileID: 5277483047579595663, guid: a56cdef20677183449f4f69181c86741,
     type: 3}
+  maxHealth: 5

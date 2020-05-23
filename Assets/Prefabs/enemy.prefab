@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1802532419961208178}
   - component: {fileID: 4156776418146675160}
   - component: {fileID: 7506507995109395785}
+  - component: {fileID: 4322833907412660613}
   m_Layer: 9
   m_Name: enemy
   m_TagString: Untagged
@@ -143,5 +144,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa36259ceace58d4d8df47e0744038a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodStein: {fileID: 851018776620523629, guid: 1970555d92cf80143a5a8ea7fd516a9b,
+--- !u!114 &4322833907412660613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083403278833852200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b6f0e4e95412a4caffef18f46ff2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathObject: {fileID: 851018776620523629, guid: 1970555d92cf80143a5a8ea7fd516a9b,
     type: 3}
+  maxHealth: 10

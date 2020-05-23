@@ -6,6 +6,6 @@ public class Bullet : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision) {
         Destroy(gameObject);
-        collision.collider.GetComponent<EnemyController>()?.Hit();
+        collision.collider.GetComponent<ObjectWithHealth>()?.TakeDamage(5);
     }
 }

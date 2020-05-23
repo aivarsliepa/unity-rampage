@@ -94,7 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987d43ef012851443bdd2f793275bf39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useController: 1
+  useController: 0
   cursorSpeed: 30
   distance: 3
   previousAngle: 0
+  freeAim: 0
+  freeAimBoundsOffset: 1

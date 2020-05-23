@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    public bool canShoot = true;
-
     Crosshair crosshair;
-
     public Transform firePoint;
     public Weapon weapon;
 

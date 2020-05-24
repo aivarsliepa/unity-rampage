@@ -7,6 +7,8 @@ public class MeleeEnemy : MonoBehaviour
 
     public float attackRange = 1f;
     public int damage = 1;
+    public float attackRate = 1f;
+    private bool canAttack = true;
 
     PlayerController player;
     Animator animator;
@@ -18,10 +20,20 @@ public class MeleeEnemy : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) < attackRange)
+        if (canAttack && Vector2.Distance(transform.position, player.transform.position) < attackRange)
         {
-            Debug.Log(player.GetComponent<ObjectWithHealth>());
-            player.GetComponent<ObjectWithHealth>().TakeDamage(damage);
+            StartCoroutine(Attack());
         }
+    }
+
+    IEnumerator Attack() {
+        canAttack = false;
+
+        animator.SetTrigger("Attack");
+        player.GetComponent<ObjectWithHealth>().TakeDamage(damage);
+
+        yield return new WaitForSeconds(1 / attackRate);
+
+        canAttack = true;
     }
 }

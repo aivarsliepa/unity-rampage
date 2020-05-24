@@ -8,6 +8,8 @@ public class Shooter : MonoBehaviour
     public Transform firePoint;
     public Weapon weapon;
 
+    public int bulletLayer = 0;
+
     void Start()
     {
         crosshair = FindObjectOfType<Crosshair>();
@@ -24,6 +26,7 @@ public class Shooter : MonoBehaviour
     private void FireBullet()
     {
         GameObject bullet = Instantiate(weapon.bulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.layer = bulletLayer;
         weapon.FireAtTarget(bullet, firePoint.position, crosshair.transform.position);
     }
 }

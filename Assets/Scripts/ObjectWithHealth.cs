@@ -34,7 +34,7 @@ public class ObjectWithHealth : MonoBehaviour
         ChangeHealth(health);
     }
 
-    void Die()
+    protected virtual void Die()
     {
         Destroy(gameObject);
         Instantiate(deathObject, transform.position, Quaternion.identity);

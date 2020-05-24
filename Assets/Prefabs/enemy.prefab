@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4156776418146675160}
   - component: {fileID: 7506507995109395785}
   - component: {fileID: 4322833907412660613}
+  - component: {fileID: 1198552502556077505}
+  - component: {fileID: 6472260178488953307}
   m_Layer: 9
   m_Name: enemy
   m_TagString: Untagged
@@ -144,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa36259ceace58d4d8df47e0744038a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
+  maxSpeed: 5
 --- !u!114 &4322833907412660613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,3 +162,36 @@ MonoBehaviour:
   deathObject: {fileID: 851018776620523629, guid: 1970555d92cf80143a5a8ea7fd516a9b,
     type: 3}
   maxHealth: 10
+--- !u!114 &1198552502556077505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083403278833852200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0e3f17ab3b3754aa4a66c2cda8539c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 1
+  damage: 1
+--- !u!95 &6472260178488953307
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083403278833852200}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4cc700fe0824a17469ae15c390820dd6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

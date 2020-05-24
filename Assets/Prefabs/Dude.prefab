@@ -40,10 +40,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1497457031098656235}
   - component: {fileID: 7127894039846217408}
-  - component: {fileID: 7313010305051893209}
   - component: {fileID: 881988922}
   - component: {fileID: 881988923}
   - component: {fileID: 5092770420168251343}
+  - component: {fileID: 7313010305051893209}
   m_Layer: 8
   m_Name: Dude
   m_TagString: Untagged
@@ -116,21 +116,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7313010305051893209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565470425320198135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d963f565d34fe54897cdc818fc20613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveForce: 5000
-  maxVelocity: 5
-  slowDown: 0.9
 --- !u!50 &881988922
 Rigidbody2D:
   serializedVersion: 4
@@ -190,5 +175,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40973383622f9174999fc9df06097401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canShoot: 1
   firePoint: {fileID: 1505991135658386387}
+  bulletLayer: 0
+--- !u!114 &7313010305051893209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7565470425320198135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d963f565d34fe54897cdc818fc20613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathObject: {fileID: 851018776620523629, guid: 1970555d92cf80143a5a8ea7fd516a9b,
+    type: 3}
+  maxHealth: 10
+  moveForce: 5000
+  maxVelocity: 5
+  slowDown: 0.9

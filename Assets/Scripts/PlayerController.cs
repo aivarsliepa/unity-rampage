@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : ObjectWithHealth
 {
     Rigidbody2D rigidbody2d;
     Vector2 movement = new Vector2(0, 0);
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         crosshair = FindObjectOfType<Crosshair>();
         shooter = GetComponent<Shooter>();
+        shooter.bulletLayer = GlobalConstants.LAYER_PLAYER_BULLET;
     }
 
     void Update()
@@ -56,5 +57,9 @@ public class PlayerController : MonoBehaviour
     {
         shooter.weapon = weapon;
         return true;
+    }
+
+    protected override void Die() {
+        Instantiate(deathObject, transform.position, Quaternion.identity);
     }
 }

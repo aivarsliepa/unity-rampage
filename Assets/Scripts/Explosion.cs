@@ -15,11 +15,7 @@ public class Explosion : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(explosionPos, blastRadius);
         foreach (Collider2D hit in colliders)
         {
-            var rb = hit.GetComponent<Rigidbody2D>();
-            // if (rb != null)
-            // {
-                rb?.AddExplosionForce(blastPower, explosionPos, blastRadius); // optional chaining fails for extensions
-            // }
+            hit.GetComponent<Rigidbody2D>().AddExplosionForce(blastPower, explosionPos, blastRadius);
             hit.GetComponent<ObjectWithHealth>()?.TakeDamage(damage);
         }
     }

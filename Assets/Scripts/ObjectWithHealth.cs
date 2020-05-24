@@ -6,14 +6,14 @@ public class ObjectWithHealth : MonoBehaviour
 {
     public GameObject deathObject;
     public int maxHealth = 10;
-    private int currentHealth;
+    protected int currentHealth;
 
     void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void ChangeHealth(int deltaHealth)
+    public virtual void ChangeHealth(int deltaHealth)
     {
         currentHealth += deltaHealth;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);

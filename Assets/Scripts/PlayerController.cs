@@ -13,6 +13,7 @@ public class PlayerController : ObjectWithHealth
 
     Crosshair crosshair;
     Shooter shooter;
+    public Healthbar healthbar;
 
     void Start()
     {
@@ -61,5 +62,10 @@ public class PlayerController : ObjectWithHealth
 
     protected override void Die() {
         Instantiate(deathObject, transform.position, Quaternion.identity);
+    }
+
+    public override void ChangeHealth(int deltaHealth) {
+        base.ChangeHealth(deltaHealth);
+        healthbar.SetHealth(currentHealth);
     }
 }

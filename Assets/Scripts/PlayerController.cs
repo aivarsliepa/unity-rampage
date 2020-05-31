@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Boo.Lang;
 using UnityEngine;
 
 public class PlayerController : ObjectWithHealth
@@ -12,15 +11,16 @@ public class PlayerController : ObjectWithHealth
     public float slowDown = 0.9f;
 
     Crosshair crosshair;
-    Shooter shooter;
     public Healthbar healthbar;
 
-    void Start()
+    private Gun[] guns;
+    private Gun activeGun;
+
+    void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         crosshair = FindObjectOfType<Crosshair>();
-        shooter = GetComponent<Shooter>();
-        shooter.bulletLayer = GlobalConstants.LAYER_PLAYER_BULLET;
+        guns = GetComponentsInChildren<Gun>(true);
     }
 
     void Update()
@@ -31,7 +31,7 @@ public class PlayerController : ObjectWithHealth
 
         if (Input.GetButton("Fire1"))
         {
-            shooter.Shoot();
+            activeGun?.FireAt(crosshair.transform.position);
         }
     }
 
@@ -54,17 +54,31 @@ public class PlayerController : ObjectWithHealth
         transform.rotation = Utils.GetRotationAngle(transform.position, crosshair.transform.position);
     }
 
-    public bool PickWeapon(Weapon weapon)
+    public bool PickWeapon(GunType gunType)
     {
-        shooter.weapon = weapon;
+        foreach (Gun gun in guns)
+        {
+            if (gun.Stats.gunType == gunType)
+            {
+                activeGun = gun;
+                gun.gameObject.SetActive(true);
+            }
+            else
+            {
+                gun.gameObject.SetActive(false);
+            }
+        }
+
         return true;
     }
 
-    protected override void Die() {
+    protected override void Die()
+    {
         Instantiate(deathObject, transform.position, Quaternion.identity);
     }
 
-    public override void ChangeHealth(int deltaHealth) {
+    public override void ChangeHealth(int deltaHealth)
+    {
         base.ChangeHealth(deltaHealth);
         healthbar.SetHealth(currentHealth);
     }

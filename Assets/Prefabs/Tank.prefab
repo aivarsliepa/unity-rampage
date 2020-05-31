@@ -44,8 +44,8 @@ GameObject:
   - component: {fileID: 689570429067760692}
   - component: {fileID: 6367274023438677888}
   - component: {fileID: 2588879550042509318}
-  - component: {fileID: 5853838547943572066}
   - component: {fileID: 3089835623800976081}
+  - component: {fileID: 5287563887861805997}
   m_Layer: 9
   m_Name: Tank
   m_TagString: Untagged
@@ -194,20 +194,6 @@ MonoBehaviour:
   deathObject: {fileID: 851018776620523629, guid: 1970555d92cf80143a5a8ea7fd516a9b,
     type: 3}
   maxHealth: 50
---- !u!114 &5853838547943572066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5026675246930108882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40973383622f9174999fc9df06097401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 3296675391093019512}
-  bulletLayer: 0
 --- !u!114 &3089835623800976081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,8 +206,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6573c49386ec5b4a8e686d0e3adefbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2871514269341823914, guid: 37cf1acbfa22a5143bfd34601ee55e3b,
-    type: 3}
-  bulletForce: 20
-  fireRate: 2.5
-  damage: 5
+--- !u!114 &5287563887861805997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026675246930108882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33707c18244db29499f81b7787b53616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stats:
+    bulletPrefab: {fileID: 2871514269341823914, guid: 37cf1acbfa22a5143bfd34601ee55e3b,
+      type: 3}
+    bulletForce: 20
+    fireRate: 1
+    damage: 10
+    bulletLayer: 12
+    gunType: 0
+  firePoint: {fileID: 3296675391093019512}

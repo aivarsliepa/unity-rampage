@@ -1,5 +1,4 @@
-public static class GlobalConstants
-{
-    public static int LAYER_PLAYER_BULLET = 10;
-    public static int LAYER_ENEMY_BULLET = 12;
+public enum BulletLayer {
+    PLAYER_BULLET = 10,
+    ENEMY_BULLET = 12
 }

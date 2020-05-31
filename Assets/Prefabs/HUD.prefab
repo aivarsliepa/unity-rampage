@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 6483141666360314681}
   - component: {fileID: 6567209983057235211}
   - component: {fileID: 4689882195885128986}
+  - component: {fileID: 7979935348843786529}
   m_Layer: 5
   m_Name: Red gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6483141666360314681
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74,6 +75,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7979935348843786529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133199581828294431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a356339444b5f324387503fc98eb2a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunType: 0
 --- !u!1 &1072470930293842414
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,8 +97,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6467517189667707034}
-  - component: {fileID: 245704022763793555}
-  - component: {fileID: 1462998446833611725}
+  - component: {fileID: 4075182261924187067}
   m_Layer: 5
   m_Name: Weapons bar
   m_TagString: Untagged
@@ -108,12 +121,12 @@ RectTransform:
   m_Father: {fileID: 6106661399785905111}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 20, y: 20}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -100}
   m_SizeDelta: {x: 150, y: 110}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &245704022763793555
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &4075182261924187067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,60 +135,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1072470930293842414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 9eb28dc5b01cc274cad25cc9f07d5a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 0
-  m_TargetGraphic: {fileID: 0}
-  m_FillRect: {fileID: 0}
-  m_HandleRect: {fileID: 0}
-  m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 1
-  m_Value: 1
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1462998446833611725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072470930293842414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a44043c89364654887ee4bc2c1072e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 245704022763793555}
 --- !u!1 &4994396165842367211
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,13 +149,14 @@ GameObject:
   - component: {fileID: 1638934596281173698}
   - component: {fileID: 5602884572726582956}
   - component: {fileID: 138965827043914823}
+  - component: {fileID: 1655066416865083678}
   m_Layer: 5
   m_Name: Machine gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1638934596281173698
 RectTransform:
   m_ObjectHideFlags: 0
@@ -208,11 +171,11 @@ RectTransform:
   m_Father: {fileID: 6467517189667707034}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1047, y: 360}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &5602884572726582956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -250,6 +213,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1655066416865083678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994396165842367211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a356339444b5f324387503fc98eb2a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunType: 1
 --- !u!1 &6106661398915552690
 GameObject:
   m_ObjectHideFlags: 0

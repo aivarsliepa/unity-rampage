@@ -1,25 +1,34 @@
 ﻿using Boo.Lang;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : ObjectWithHealth
 {
+    // movement
     Rigidbody2D rigidbody2d;
     Vector2 movement = new Vector2(0, 0);
-
     public float moveForce = 5000f;
     public float maxVelocity = 5f;
     public float slowDown = 0.9f;
 
+    // UI
     Crosshair crosshair;
-    public Healthbar healthbar;
+    Healthbar healthbar;
+    WeaponBar weaponBar;
 
+    // Guns
     private Gun[] guns;
     private Gun activeGun;
+    private List<GunType> gunList;
+    private int activeGunIndex = -1;
 
     void Awake()
     {
+        gunList = new List<GunType>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         crosshair = FindObjectOfType<Crosshair>();
+        healthbar = FindObjectOfType<Healthbar>();
+        weaponBar = FindObjectOfType<WeaponBar>();
         guns = GetComponentsInChildren<Gun>(true);
     }
 
@@ -32,6 +41,17 @@ public class PlayerController : ObjectWithHealth
         if (Input.GetButton("Fire1"))
         {
             activeGun?.FireAt(crosshair.transform.position);
+        }
+
+        var scrollWheel = Input.GetAxis("Mouse ScrollWheel");
+
+        if (scrollWheel > 0f)
+        {
+            SelectWeapon(++activeGunIndex);
+        }
+        else if (scrollWheel < 0f)
+        {
+            SelectWeapon(--activeGunIndex);
         }
     }
 
@@ -56,6 +76,29 @@ public class PlayerController : ObjectWithHealth
 
     public bool PickWeapon(GunType gunType)
     {
+        if (gunList.Contains(gunType))
+            return false;
+
+        gunList.Add(gunType);
+        SelectWeapon(gunList.Count - 1);
+
+        return true;
+    }
+
+    private void SelectWeapon(int index)
+    {
+        if (index < 0)
+        {
+            index = gunList.Count - 1;
+        } else if (index >= gunList.Count)
+        {
+            index = 0;
+        }
+
+        activeGunIndex = index;
+        var gunType = gunList.ElementAt(index);
+        weaponBar.SetActiveWeapon(gunType);
+
         foreach (Gun gun in guns)
         {
             if (gun.Stats.gunType == gunType)
@@ -68,8 +111,6 @@ public class PlayerController : ObjectWithHealth
                 gun.gameObject.SetActive(false);
             }
         }
-
-        return true;
     }
 
     protected override void Die()

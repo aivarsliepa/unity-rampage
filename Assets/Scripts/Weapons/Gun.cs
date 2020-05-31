@@ -25,16 +25,11 @@ public enum GunType
 
 public class Gun : MonoBehaviour
 {
+    public GunStats Stats;
+    public Transform firePoint;
+
     private bool canShoot;
-
     private CollisionEvent collisionEvent;
-
-    [SerializeField]
-    private GunStats _stats;
-    public GunStats Stats => _stats;
-
-    [SerializeField]
-    private Transform firePoint;
 
     public void Awake()
     {

@@ -2,8 +2,7 @@
 
 public class PickableWeapon : MonoBehaviour
 {
-    [SerializeField]
-    private GunType gunType;
+    public GunType gunType;
 
     void OnCollisionEnter2D(Collision2D collision)
     {

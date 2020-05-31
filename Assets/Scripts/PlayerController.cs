@@ -17,19 +17,19 @@ public class PlayerController : ObjectWithHealth
     WeaponBar weaponBar;
 
     // Guns
-    private Gun[] guns;
-    private Gun activeGun;
-    private List<GunType> gunList;
+    private WeaponBase[] weapons;
+    private WeaponBase activeWeapon;
+    private List<GunType> weaponList;
     private int activeGunIndex = -1;
 
     void Awake()
     {
-        gunList = new List<GunType>();
+        weaponList = new List<GunType>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         crosshair = FindObjectOfType<Crosshair>();
         healthbar = FindObjectOfType<Healthbar>();
         weaponBar = FindObjectOfType<WeaponBar>();
-        guns = GetComponentsInChildren<Gun>(true);
+        weapons = GetComponentsInChildren<WeaponBase>(true);
     }
 
     void Update()
@@ -40,7 +40,7 @@ public class PlayerController : ObjectWithHealth
 
         if (Input.GetButton("Fire1"))
         {
-            activeGun?.FireAt(crosshair.transform.position);
+            activeWeapon?.FireAt(crosshair.transform.position);
         }
 
         var scrollWheel = Input.GetAxis("Mouse ScrollWheel");
@@ -76,11 +76,11 @@ public class PlayerController : ObjectWithHealth
 
     public bool PickWeapon(GunType gunType)
     {
-        if (gunList.Contains(gunType))
+        if (weaponList.Contains(gunType))
             return false;
 
-        gunList.Add(gunType);
-        SelectWeapon(gunList.Count - 1);
+        weaponList.Add(gunType);
+        SelectWeapon(weaponList.Count - 1);
 
         return true;
     }
@@ -89,26 +89,26 @@ public class PlayerController : ObjectWithHealth
     {
         if (index < 0)
         {
-            index = gunList.Count - 1;
-        } else if (index >= gunList.Count)
+            index = weaponList.Count - 1;
+        } else if (index >= weaponList.Count)
         {
             index = 0;
         }
 
         activeGunIndex = index;
-        var gunType = gunList.ElementAt(index);
+        var gunType = weaponList.ElementAt(index);
         weaponBar.SetActiveWeapon(gunType);
 
-        foreach (Gun gun in guns)
+        foreach (WeaponBase weapon in weapons)
         {
-            if (gun.Stats.gunType == gunType)
+            if (weapon.gunType == gunType)
             {
-                activeGun = gun;
-                gun.gameObject.SetActive(true);
+                activeWeapon = weapon;
+                weapon.gameObject.SetActive(true);
             }
             else
             {
-                gun.gameObject.SetActive(false);
+                weapon.gameObject.SetActive(false);
             }
         }
     }

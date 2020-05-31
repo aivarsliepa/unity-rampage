@@ -14,16 +14,9 @@ public struct GunStats
     public float fireRate;
     public int damage;
     public BulletLayer bulletLayer;
-    public GunType gunType;
 }
 
-public enum GunType
-{
-    HAND_GUN,
-    MACHINE_GUN
-}
-
-public class Gun : MonoBehaviour
+public class Gun : WeaponBase
 {
     public GunStats Stats;
     public Transform firePoint;
@@ -38,7 +31,7 @@ public class Gun : MonoBehaviour
         collisionEvent.AddListener(BulletCollisionHandler);
     }
 
-    public void FireAt(Vector2 target)
+    public override void FireAt(Vector2 target)
     {
         if (canShoot)
         {

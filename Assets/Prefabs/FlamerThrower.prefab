@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 468367582130866378}
   - component: {fileID: 9181723239229604752}
   - component: {fileID: 1843437843909087039}
+  - component: {fileID: 3431329298415476346}
   m_Layer: 0
   m_Name: FlamerThrower
   m_TagString: Untagged
@@ -97,6 +98,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunType: 2
   flame: {fileID: 363680532637686254}
+  fireDamage: 2
+  burnRate: 10
+--- !u!60 &3431329298415476346
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963204534887379351}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.12, y: 3.68}
+    newSize: {x: 11.12, y: 3.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 105.68256, y: -42.79427}
+      - {x: 106.52869, y: 45.83249}
+      - {x: 4.1660786, y: 7.0111227}
+      - {x: 4.107485, y: -4.1698527}
 --- !u!1001 &5391152787592901562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,6 +140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flames
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754814593567091274, guid: 431190284fbaa354b85399007de5653b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5754814593567091275, guid: 431190284fbaa354b85399007de5653b,
         type: 3}
@@ -179,15 +216,55 @@ PrefabInstance:
       propertyPath: ShapeModule.m_Position.x
       value: 0.56294346
       objectReference: {fileID: 0}
+    - target: {fileID: 5754814593567091284, guid: 431190284fbaa354b85399007de5653b,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754814593567091284, guid: 431190284fbaa354b85399007de5653b,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754814593567091284, guid: 431190284fbaa354b85399007de5653b,
+        type: 3}
+      propertyPath: CollisionModule.collisionMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754814593567091284, guid: 431190284fbaa354b85399007de5653b,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754814593567091284, guid: 431190284fbaa354b85399007de5653b,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754814593567091284, guid: 431190284fbaa354b85399007de5653b,
+        type: 3}
+      propertyPath: TriggerModule.outside
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754814593567091284, guid: 431190284fbaa354b85399007de5653b,
+        type: 3}
+      propertyPath: TriggerModule.enter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754814593567091284, guid: 431190284fbaa354b85399007de5653b,
+        type: 3}
+      propertyPath: TriggerModule.exit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5754814593567091285, guid: 431190284fbaa354b85399007de5653b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9073449
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5754814593567091285, guid: 431190284fbaa354b85399007de5653b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.444318
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 5754814593567091285, guid: 431190284fbaa354b85399007de5653b,
         type: 3}

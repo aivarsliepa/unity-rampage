@@ -42,6 +42,10 @@ public class PlayerController : ObjectWithHealth
         {
             activeWeapon?.FireAt(crosshair.transform.position);
         }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            activeWeapon?.StopFiring();
+        }
 
         var scrollWheel = Input.GetAxis("Mouse ScrollWheel");
 
@@ -105,9 +109,11 @@ public class PlayerController : ObjectWithHealth
             {
                 activeWeapon = weapon;
                 weapon.gameObject.SetActive(true);
+                weapon.StopFiring();
             }
             else
             {
+                weapon.StopFiring();
                 weapon.gameObject.SetActive(false);
             }
         }

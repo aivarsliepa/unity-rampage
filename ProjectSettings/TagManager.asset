@@ -50,6 +50,12 @@ TagManager:
   - name: OnChar
     uniqueID: 3955706799
     locked: 0
+  - name: Blood
+    uniqueID: 2216456691
+    locked: 0
+  - name: Fire
+    uniqueID: 3735675279
+    locked: 0
   - name: Encapsuling
     uniqueID: 3890594471
     locked: 0

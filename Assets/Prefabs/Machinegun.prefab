@@ -99,7 +99,7 @@ MonoBehaviour:
   Stats:
     bulletPrefab: {fileID: 2871514269341823914, guid: 37cf1acbfa22a5143bfd34601ee55e3b,
       type: 3}
-    bulletForce: 20
+    bulletForce: 30
     fireRate: 10
     damage: 5
     bulletLayer: 10
@@ -127,10 +127,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9207010377274742342}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 5.46, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4218040850103041004}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}

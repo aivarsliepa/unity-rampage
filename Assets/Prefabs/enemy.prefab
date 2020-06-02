@@ -159,6 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b6f0e4e95412a4caffef18f46ff2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 4724639926925385092, guid: d3b5b74b61ec4324d9bd14350a1af179,
+    type: 3}
   deathObject: {fileID: 851018776620523629, guid: 1970555d92cf80143a5a8ea7fd516a9b,
     type: 3}
   maxHealth: 10
@@ -176,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 1
   damage: 1
+  attackRate: 1
 --- !u!95 &6472260178488953307
 Animator:
   serializedVersion: 3

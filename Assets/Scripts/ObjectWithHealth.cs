@@ -1,14 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObjectWithHealth : MonoBehaviour
 {
+    public ParticleSystem hitEffect;
     public GameObject deathObject;
     public int maxHealth = 10;
     protected int currentHealth;
 
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
     }
@@ -26,6 +25,11 @@ public class ObjectWithHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (hitEffect != null)
+        {
+            Instantiate(hitEffect, transform.position, Quaternion.identity);
+        }
+
         ChangeHealth(-damage);
     }
 

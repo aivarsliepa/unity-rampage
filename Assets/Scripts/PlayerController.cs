@@ -11,6 +11,10 @@ public class PlayerController : ObjectWithHealth
     public float maxVelocity = 5f;
     public float slowDown = 0.9f;
 
+    public bool usePhysicsMovement = true;
+
+    public float moveSpeed = 5f;
+
     // UI
     Crosshair crosshair;
     Healthbar healthbar;
@@ -61,19 +65,30 @@ public class PlayerController : ObjectWithHealth
 
     void FixedUpdate()
     {
-        if (movement != Vector2.zero)
+        if (usePhysicsMovement)
         {
-            rigidbody2d.AddForce(movement * moveForce);
-            rigidbody2d.velocity = Vector2.ClampMagnitude(rigidbody2d.velocity, maxVelocity);
+            if (movement != Vector2.zero)
+            {
+                rigidbody2d.AddForce(movement * moveForce);
+                rigidbody2d.velocity = Vector2.ClampMagnitude(rigidbody2d.velocity, maxVelocity);
+            }
+            else if (rigidbody2d.velocity.magnitude < 0.1f)
+            {
+                rigidbody2d.velocity = Vector2.zero;
+            }
+            else if (!Mathf.Approximately(rigidbody2d.velocity.magnitude, 0f))
+            {
+                rigidbody2d.velocity = rigidbody2d.velocity * slowDown;
+            }
         }
-        else if (rigidbody2d.velocity.magnitude < 0.1f)
+        else
         {
-            rigidbody2d.velocity = Vector2.zero;
+            Vector2 newPos = rigidbody2d.position;
+            newPos.x = newPos.x + moveSpeed * movement.x * Time.fixedDeltaTime;
+            newPos.y = newPos.y + moveSpeed * movement.y * Time.fixedDeltaTime;
+            rigidbody2d.MovePosition(newPos);
         }
-        else if (!Mathf.Approximately(rigidbody2d.velocity.magnitude, 0f))
-        {
-            rigidbody2d.velocity = rigidbody2d.velocity * slowDown;
-        }
+        
 
         transform.rotation = Utils.GetRotationAngle(transform.position, crosshair.transform.position);
     }

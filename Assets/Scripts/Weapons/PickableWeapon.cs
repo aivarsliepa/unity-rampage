@@ -5,9 +5,9 @@ public class PickableWeapon : MonoBehaviour
 {
     public GunType gunType;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        var player = collision.collider.GetComponent<PlayerController>();
+        var player = collider.GetComponent<PlayerController>();
         if (player != null && player.PickWeapon(gunType))
         {
             Destroy(gameObject);

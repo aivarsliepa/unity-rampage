@@ -146,12 +146,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d963f565d34fe54897cdc818fc20613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 0}
   deathObject: {fileID: 851018776620523629, guid: 1970555d92cf80143a5a8ea7fd516a9b,
     type: 3}
   maxHealth: 10
   moveForce: 5000
   maxVelocity: 5
   slowDown: 0.9
+  usePhysicsMovement: 1
+  moveSpeed: 5
 --- !u!1001 &3789394100590483424
 PrefabInstance:
   m_ObjectHideFlags: 0

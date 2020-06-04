@@ -12,9 +12,11 @@ public class FlameThrower : WeaponBase
     private bool isFiring = false;
 
     private List<ObjectWithHealth> enemiesInRadius;
+    private Rigidbody2D playerRigidBody;
 
     public void Awake()
     {
+        playerRigidBody = FindObjectOfType<PlayerController>().GetComponent<Rigidbody2D>();
         enemiesInRadius = new List<ObjectWithHealth>();
         flame.Stop();
     }
@@ -23,7 +25,6 @@ public class FlameThrower : WeaponBase
     {
         if (!isFiring)
         {
-            Debug.Log("START!");
             flame.Play();
             StartCoroutine(BurnThePlace());
         }
@@ -33,7 +34,6 @@ public class FlameThrower : WeaponBase
 
     public override void StopFiring()
     {
-        Debug.Log("STOP!");
         flame.Stop();
         isFiring = false;
     }

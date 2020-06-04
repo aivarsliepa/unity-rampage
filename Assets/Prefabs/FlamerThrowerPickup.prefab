@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9181723239229604752}
   - component: {fileID: 9132987302974055327}
   - component: {fileID: 1412180214623685119}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FlamerThrowerPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
